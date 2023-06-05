@@ -8,14 +8,13 @@ import com.github.model.Observable;
 public class TotalRevenueView extends Observable
 {
     @Override
-    protected void doShowTotalIncome()
+    protected void doShowTotalIncome() throws Exception
     {
         System.out.println("Date: " + java.time.LocalDate.now() + " Total revenue: " + this.totalRevenue + "\n");
     }
 
     @Override
     protected void handleErrors(Exception e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'handleErrors'");
+        System.out.println("Couldnt write to console.");
     }
 }

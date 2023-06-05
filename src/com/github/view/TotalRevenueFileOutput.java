@@ -42,7 +42,6 @@ public class TotalRevenueFileOutput extends Observable
     @Override
     protected void handleErrors(Exception e) 
     {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'handleErrors'");
+        System.out.println("Couldnt write to file.");
     }
 }

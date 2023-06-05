@@ -5,5 +5,9 @@ package com.github.model;
  */
 public interface SaleObserver
 {
+    /**
+     * Updates and shows total income.
+     * @param priceOfTheSaleThatWasJustMade the total sale amount.
+     */
     public void newSaleWasMade (double priceOfTheSaleThatWasJustMade);
 }

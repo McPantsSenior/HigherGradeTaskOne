@@ -4,11 +4,13 @@ public abstract class Observable implements SaleObserver
 {
     protected double totalRevenue;
 
-    // This is the method defined in the observer interface.
+    /**
+     * Updates and shows total income.
+     * @param priceOfTheSaleThatWasJustMade the total sale amount.
+     */
     public void newSaleWasMade (double priceOfTheSaleThatWasJustMade)
     {
-        priceOfSale(priceOfTheSaleThatWasJustMade); // Calculate
-        // the total amount paid since the program started .
+        priceOfSale(priceOfTheSaleThatWasJustMade);
         showTotalIncome();
     }
     
