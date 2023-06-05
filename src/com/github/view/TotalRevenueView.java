@@ -1,22 +1,21 @@
 package com.github.view;
 
-import com.github.model.SaleObserver;
+import com.github.model.Observable;
 
 /**
  * Used to show the total income on the user interface
  */
-public class TotalRevenueView implements SaleObserver
+public class TotalRevenueView extends Observable
 {
-    private double totalRevenue;
-
-    /**
-     * prints total revenue
-     * @param totalPrice added to total revenue
-     */
-    @Override       //subclass method should override superclass method
-    public void priceOfSale (double totalPrice)
+    @Override
+    protected void doShowTotalIncome()
     {
-        totalRevenue += totalPrice;
-        System.out.println("Date: " + java.time.LocalDate.now() + " Total revenue: " + totalRevenue + "\n");
+        System.out.println("Date: " + java.time.LocalDate.now() + " Total revenue: " + this.totalRevenue + "\n");
+    }
+
+    @Override
+    protected void handleErrors(Exception e) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'handleErrors'");
     }
 }

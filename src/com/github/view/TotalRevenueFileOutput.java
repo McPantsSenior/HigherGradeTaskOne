@@ -1,4 +1,5 @@
 package com.github.view;
+import com.github.model.Observable;
 import com.github.model.SaleObserver;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,9 +13,8 @@ import java.io.PrintWriter;
 /**
  * Used to print the total income to a file.
  */
-public class TotalRevenueFileOutput implements SaleObserver  
+public class TotalRevenueFileOutput extends Observable 
 {
-    private double totalRevenue;
     private PrintWriter OutputFile;
 
     /**
@@ -33,14 +33,16 @@ public class TotalRevenueFileOutput implements SaleObserver
         }
     }
 
-    /**
-     * prints total revenue
-     * @param totalPrice added to total revenue
-     */
-    @Override       //subclass method should override superclass method
-    public void priceOfSale (double totalPrice)
+    @Override
+    protected void doShowTotalIncome() throws Exception
     {
-        totalRevenue += totalPrice;
-        OutputFile.println("Date: " + java.time.LocalDate.now() + " Total revenue: " + totalRevenue + "\n");
+        OutputFile.println("Date: " + java.time.LocalDate.now() + " Total revenue: " + this.totalRevenue + "\n");
+    }
+
+    @Override
+    protected void handleErrors(Exception e) 
+    {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'handleErrors'");
     }
 }

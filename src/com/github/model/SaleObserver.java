@@ -10,4 +10,5 @@ public interface SaleObserver
      * @param totalPrice Total price of sale
      */
     public void priceOfSale (double totalPrice);
+
 }
