@@ -24,8 +24,7 @@ public abstract class Observable implements SaleObserver
         }
     }
 
-    @Override
-    public void priceOfSale (double totalPrice)
+    private void priceOfSale (double totalPrice)
     {
         totalRevenue += totalPrice;
     }

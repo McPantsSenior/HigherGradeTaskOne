@@ -112,7 +112,7 @@ public class Register
     {
         for (int i = 0; i < sObs.size(); i++) 
         {
-            sObs.get(i).priceOfSale(this.totalPrice);
+            sObs.get(i).newSaleWasMade(this.totalPrice);
         }
     }
 }
